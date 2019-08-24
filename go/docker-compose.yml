@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  sentinel:
+    build: .
+    image: sentinel
+    volumes:
+      - ./src/sentinel:/go/src/sentinel
+    ports:
+      - "9090:80/tcp"    
+    stdin_open: true
+    tty: true
+    environment:
+      foo: bla
